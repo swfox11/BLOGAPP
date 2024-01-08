@@ -81,7 +81,7 @@ app.post("/api/posts", async (req, res) => {
     // console.log(response.data);
 
     await db.query(
-      "INSERT INTO record (title,content,author,date) VALUES ($1,$2,$3,$4)",
+      "INSERT INTO record (title,content,author,Time) VALUES ($1,$2,$3,$4)",
       [req.body.title, req.body.content, req.body.author, new Date()]
     );
 
@@ -103,7 +103,7 @@ app.post("/api/posts/:id", async (req, res) => {
     let foundPost = result.rows[0];
 
     await db.query(
-      "UPDATE record SET title=$1,content=$2,author =$3,date=$4 WHERE id=$5 ;",
+      "UPDATE record SET title=$1,content=$2,author =$3,Time=$4 WHERE id=$5 ;",
       [
         req.body.title || foundPost.title,
         req.body.content || foundPost.content,
