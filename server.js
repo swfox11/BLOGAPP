@@ -28,7 +28,7 @@ app.use(express.static("public"));
 
 let response = [];
 
-//CHALLENGE 1: GET All posts
+
 await db.connect();
 async function loadAgain(params) {
   let result = await db.query("SELECT * FROM record");
