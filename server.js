@@ -69,6 +69,7 @@ app.get("/edit/:id", async (req, res) => {
 
     
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: "Error fetching post" });
   }
 });
@@ -87,8 +88,9 @@ app.post("/api/posts", async (req, res) => {
     res.redirect("/");
     //res.status(201).json(posts);
   } catch (error) {
-    res.status(500).json({ message: "Error creating post" });
+    
     console.log(error);
+    res.status(500).json({ message: "Error creating post" });
   }
 });
 
@@ -119,6 +121,7 @@ app.post("/api/posts/:id", async (req, res) => {
     //await loadAgain();
     //res.status(201).json(posts);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: "Error updating post" });
   }
 });
@@ -134,6 +137,7 @@ app.get("/api/posts/delete/:id", async (req, res) => {
     // let foundPost=result.rows;
 
   } catch (error) {
+    console,log(error);
     res.status(500).json({ message: "Error deleting post" });
   }
 });
