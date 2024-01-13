@@ -63,6 +63,7 @@ textarea {
   font-size: 1em;
   outline: none;
   transition: border 0.3s;
+  white-space: pre-wrap;
 }
 
 input:focus,
