@@ -5,7 +5,7 @@ import axios from "axios";
 import pg from "pg";
 
 const app = express();
-const port = process.env.SERVER_PORT;
+const port = process.env.PORT;
 //const API_URL = `http://localhost:${process.env.API_PORT}`;
 //const port = process.env.API_PORT;
 
