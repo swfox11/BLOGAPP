@@ -38,10 +38,15 @@ async function loadAgain(params) {
 
 
 // Route to render the main page
+app.get("/x",async(req,res)=>{
+  await db.query("DROP TABLE record");
+  await db.query("CREATE TABLE record(id SERIAL ,title TEXT,content TEXT,author TEXT,Time TIMESTAMPTZ);");
+})
 app.get("/", async (req, res) => {
   try {
-    //await db.query("CREATE TABLE record(id SERIAL ,title TEXT,content TEXT,author TEXT,date TIMESTAMPTZ);");
-    await loadAgain();
+    
+    
+    //await loadAgain();
     //console.log(response);
     res.render("index.ejs", { posts: response });
   } catch (error) {
