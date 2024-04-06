@@ -40,7 +40,7 @@ async function loadAgain(params) {
 // Route to render the main page
 app.get("/", async (req, res) => {
   try {
-    //await db.query("CREATE TABLE record(id SERIAL ,title TEXT,content TEXT,author TEXT,date TIMESTAMPTZ);");
+    await db.query("CREATE TABLE record(id SERIAL ,title TEXT,content TEXT,author TEXT,date TIMESTAMPTZ);");
     await loadAgain();
     //console.log(response);
     res.render("index.ejs", { posts: response });
